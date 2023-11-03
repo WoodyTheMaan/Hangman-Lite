@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             int wrongGuess = 3;
+            string displayWord = "________", secretWord = "COMPUTER";
             Console.WriteLine("Hangman Lite");
             Console.WriteLine("");
             Console.WriteLine("A Gration's Lite LLC creation");
@@ -17,10 +18,15 @@
             Console.ReadLine();
 
 
+            string guess = "";
+            while (guess.Length != 1)
+            {
+                Console.WriteLine("Place a guess");
+                guess = Console.ReadLine().ToUpper();
+            }
 
             if (wrongGuess == 0)
             {
-                Console.WriteLine("Place a guess");
                 Console.WriteLine("");
                 Console.WriteLine("+---+");
                 Console.WriteLine("|   |");
@@ -31,7 +37,7 @@
                 Console.WriteLine("=========");
                 Console.WriteLine("");
                 Console.WriteLine("The Word:");
-                Console.WriteLine("________");
+                Console.WriteLine(displayWord);
             }
             else if (wrongGuess == 1)
             {
@@ -42,6 +48,8 @@
                 Console.WriteLine("    |");
                 Console.WriteLine("    |");
                 Console.WriteLine("=========");
+                Console.WriteLine("The Word:");
+                Console.WriteLine(displayWord);
             }
             else if (wrongGuess == 2)
             {
@@ -52,6 +60,8 @@
                 Console.WriteLine("     |"); 
                 Console.WriteLine("     |");
                 Console.WriteLine("=========");
+                Console.WriteLine("The Word:");
+                Console.WriteLine(displayWord);
             }
             else if (wrongGuess == 3)
             {
@@ -62,6 +72,8 @@
                 Console.WriteLine("  |   |");
                 Console.WriteLine(" / \\  |");
                 Console.WriteLine("=========");
+                Console.WriteLine($"The Word: {secretWord}");
+                
             }
         }
     }
