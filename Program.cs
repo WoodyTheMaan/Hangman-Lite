@@ -7,7 +7,6 @@
             int wrongGuess = 0;
             string displayWord = "________", secretWord = "COMPUTER";
             bool repeat = true;
-            bool done = false;
             Console.WriteLine("Hangman Lite");
             Console.WriteLine("");
             Console.WriteLine("A Gration's Lite LLC creation");
@@ -49,7 +48,8 @@
                 {
                     Console.WriteLine("YOU WON!!!!");
                     Console.WriteLine("The word was COMPUTER!");
-                    break;
+                    Console.ReadLine();
+                    repeat = false;
                 }
 
                 if (wrongGuess == 0)
@@ -104,8 +104,8 @@
                     Console.WriteLine("=========");
                     Console.WriteLine("You lost.....");
                     Console.WriteLine($"The Word: {secretWord}");
-                    
-                    done = !done;
+
+                    repeat = false;
 
                 }
             }
